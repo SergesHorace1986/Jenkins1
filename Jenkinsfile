@@ -10,7 +10,7 @@ pipeline {
     }
 
     triggers {
-        cron('* * * * *') // Schedule to run at 4 AM on weekdays
+        pollSCM('* * * * *') // Schedule to run at 4 AM on weekdays
     }
 
     stages {
