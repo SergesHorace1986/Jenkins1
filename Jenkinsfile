@@ -3,21 +3,12 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo 'Building...'
-                // Add your build commands here
+                echo "BRANCH_NAME: ${ env.BRANCH_NAME }"
+                echo "BRANCH_IS_PRIMARY: ${ env.BRANCH_IS_PRIMARY }"
+                echo "CI : ${ env.CI }"
+                echo "BUILD_NUMBER : ${ env.BUILD_NUMBER }"
+                echo "JENKINS-URL : ${ env.JENKINS_URL }"
             }
-        }
-        stage('Tests') {
-            steps {
-                echo 'Testing...'
-                // Add your test commands here
-            }
-        }
-        stage('Deployment') {
-            steps {
-                echo 'Deploying...'
-                // Add your deploy commands here
-            }
-        }
+        }  
     }
 }
