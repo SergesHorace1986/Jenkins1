@@ -2,8 +2,8 @@ pipeline {
     agent any
 
     environment {
-        MY-VAR = 'one variable'
-        MY-NUMBER = '123'
+        MY_VAR = 'one variable'
+        MY_NUMBER = '123'
     }
 
     stages {
