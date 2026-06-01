@@ -14,8 +14,8 @@ pipeline {
                 echo "CI : ${ env.CI }"
                 echo "BUILD_NUMBER : ${ env.BUILD_NUMBER }"
                 echo "JENKINS-URL : ${ env.JENKINS_URL }"
-                echo "MY-VAR : ${ env.MY-VAR }"
-                echo "MY-NUMBER : ${ env.MY-NUMBER }"
+                echo "MY_VAR : ${ env.MY_VAR }"
+                echo "MY_NUMBER : ${ env.MY_NUMBER }"
                 sh 'printenv'
             }
         }
