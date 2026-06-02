@@ -25,16 +25,24 @@ pipeline {
                 echo "API Key: ${params.API_KEY}"
             }
         }
-    }
 
-    post{
-        always {
-            echo ' always run !'
+        stage('Deployment - Production') {
+            input {
+                message "Do you want to deploy to production?"
+                ok "Deploy"
+                submitter "admin,devops"
+                submitterParameter "USER_SUBMIT"
+                parameters {
+                    string(name: 'VERSION', defaultValue: 'latest', description: 'Version to deploy')
+                }
+            }
+            steps {
+                echo "USER : ${ USER_SUBMIT }"
+                echo "version : ${ VERSION}"
+                echo 'Deploying to production...'
+            }
         }
-        success {
-            echo ' success run !'
-        }
-    }
+    }    
 }
 
 
