@@ -7,15 +7,17 @@ pipeline {
             steps {
                 echo 'hello'
             }
-        }
+        }  
+    }   
 
-        post {
-            success {
-                emailext (to: 'tchambahorace3@gmail.com', body: 'test body', subject: 'test subject')
-            }
+    post {
+        success {
+            emailext (to: 'tchambahorace3@gmail.com', body: 'test body', subject: 'test subject')
         }
-    }    
+    }
+     
 }
+
 
 
 
